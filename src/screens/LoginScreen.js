@@ -7,16 +7,16 @@ import {
     TextInput,
     TouchableOpacity
 } from 'react-native';
-import FooterButton from './components/FooterButton';
+import FooterButton from '../components/FooterButton';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [idText, setIdText] = useState('이메일');
     const [pwText, setPwText] = useState('비밀번호');
 
     return (
         <View style={styles.container}>
             <Image
-                source={require('./logo.png')}
+                source={require('../logo.png')}
                 style={styles.icon}
             />
             <Text style={styles.welcome}>환영합니다</Text>
@@ -39,7 +39,7 @@ const LoginScreen = () => {
                 onPress={() => {}}
             />
             <Text style={styles.noAccount}>계정이 없으신가요?</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                 <Text style={styles.createAccount}>계정 만들기</Text>
             </TouchableOpacity>
         </View>
